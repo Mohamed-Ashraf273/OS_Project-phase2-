@@ -241,16 +241,16 @@ void Finish()
     RunningProcess->data->myBlockInMemory->isEmpty = 1;
     
     //#################################################################################
-    printf("myMemoryBefore: \n");
-    printTreeLevelOrder(&myMemory);
+    // printf("myMemoryBefore: \n");
+    // printTreeLevelOrder(&myMemory);
     int foundEmptyLeaves;
     do{
         foundEmptyLeaves = 0;
         removeLeavesWithSameParent(myMemory.root, &foundEmptyLeaves);// combine if possible
     }
     while (foundEmptyLeaves);
-    printf("myMemoryAfter: \n");
-    printTreeLevelOrder(&myMemory);
+    // printf("myMemoryAfter: \n");
+    // printTreeLevelOrder(&myMemory);
     fprintf(memory_log, "At time %d freed %d bytes for process %d from %d to %d \n", getClk(), RunningProcess->data->memsize, RunningProcess->data->process_id, RunningProcess->data->startIndex, RunningProcess->data->endIndex);
     if(waitingList.head != NULL){// check waiting list if it contains any processes
         if(addProcessToMem(&myMemory, waitingList.head->data)){//if entered
