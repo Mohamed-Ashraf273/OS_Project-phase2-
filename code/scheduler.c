@@ -379,7 +379,7 @@ void AddSorted(LinkedList *list, struct Process *data)
                 }
                 else
                 {
-                    while (current != NULL && current->data->remainingTime < newNode->data->remainingTime)
+                    while (current != NULL && current->data->remainingTime <= newNode->data->remainingTime)
                     {
                         prev = current;
                         current = current->next;
@@ -420,7 +420,7 @@ void AddSorted(LinkedList *list, struct Process *data)
             {
                 Node *prev = Ready.head;
                 Node *current = prev->next;
-                while (current != NULL && current->data->remainingTime < newNode->data->remainingTime)
+                while (current != NULL && current->data->remainingTime <= newNode->data->remainingTime)
                 {
                     prev = current;
                     current = current->next;
@@ -443,7 +443,7 @@ void AddSorted(LinkedList *list, struct Process *data)
         {
             Node *prev = NULL;
             Node *current = Ready.head;
-            while (current != NULL && current->data->remainingTime < newNode->data->remainingTime)
+            while (current != NULL && current->data->remainingTime <= newNode->data->remainingTime)
             {
                 prev = current;
                 current = current->next;
