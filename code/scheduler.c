@@ -262,7 +262,7 @@ void Finish()
     //phase2 ends--------------
     int TA = getClk() - (RunningProcess->data->arrive_time);
     int wait = (RunningProcess->data->start) - (RunningProcess->data->arrive_time);
-    float WTA = (float)wait / (RunningProcess->data->running_time);
+    float WTA = (float)TA / (RunningProcess->data->running_time);
     WTA = roundf(WTA * 100) / 100;
     SUMWTA += WTA;                            // sum wating trun around time
     SUMWATING += wait;                        // sum waiting time
